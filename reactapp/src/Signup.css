@@ -1,0 +1,30 @@
+
+
+
+.App {
+    display: flex;
+    justify-content: center;
+  }
+  
+  label {
+    font-weight: bold;
+    display: flex;
+    margin-bottom: 5px;
+    margin-top: 15px;
+  }
+  
+  input + label {
+    font-weight: bold;
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+  
+  form{
+    margin-left: 40%;
+  }
+  
+  
+  .error {
+    color: red;
+    text-align: left;
+  }
