@@ -7,21 +7,13 @@
     display: flex;
     justify-content: center;
   }
-.btn{
- margin-left: 12rem;
-}
+
 
 .card{
     background-color: gainsboro;
-}
-.forms{
-    padding-left: 15rem;
-}
-.card{
-  margin-left: 2rem;
-  margin-right: 2rem;
-  margin-top: 2rem;
-    
+    margin-left: 2rem;
+     margin-right: 2rem;
+     margin-top: 2rem;
 }
 .container{
     padding-left: 20%;

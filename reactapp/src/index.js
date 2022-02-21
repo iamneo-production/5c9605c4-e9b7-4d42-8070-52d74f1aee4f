@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import './Signup.css'
-import './dashboard.css'
+
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
