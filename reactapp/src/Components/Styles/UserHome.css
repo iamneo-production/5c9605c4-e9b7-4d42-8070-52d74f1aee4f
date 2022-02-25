@@ -1,0 +1,18 @@
+#search{
+    margin-top:5% ;
+}
+#user_card{
+    width: 250px;
+   height: max-content                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ;
+}
+#bus_body{
+    height:200px;
+}
+
+#deleteBus{
+    float:right ;
+}
+
+#bus_img{
+    height: 50%;
+}

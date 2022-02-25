@@ -14,7 +14,7 @@ import * as Yup from 'yup'
 import './Styles/Addvehicle.css'
 import AdminDashboard from './AdminDashboard'
 
-function Addvehicle() {
+function EditVehicle() {
    // const URL = /^((ftp|http|https):\/\/)?(www.)?(?!.*(ftp|http|https|www.))[a-zA-Z0-9_-]+(\.[a-zA-Z]+)+((\/)[\w#]+)*(\/\w+\?[a-zA-Z0-9_]+=\w+(&[a-zA-Z0-9_]+=\w+)*)?$/gm
     const initialValues = {
         vehicleName: '',
@@ -29,16 +29,16 @@ function Addvehicle() {
         vehicleName: Yup.string().required('*Required'),
         vehicleTiming: Yup.string().required('*Required'),
         vehicleFromTo: Yup.string().required('*Required'),
-        //vehicleImageURL: Yup.string().required('*Required').matches(URL,'Url is not valid'),
+       // vehicleImageURL: Yup.string().required('*Required').matches(URL,'Url is not valid'),
         vehicleImageURL:Yup.string().required('*Required'),
         price: Yup.number().typeError('*You must specify a number').required('*Required'),
-        capacity: Yup.number().typeError('*You must specify a number').required('*Required').max(50,'*Should be less than 50'),
+        capacity: Yup.number().typeError('*You must specify a number').required('*Required'),
         vehicleDescription: Yup.string().required('*Required'),
     })
     const onSubmit = async(data, onSubmitProps) => {
         const data1={
             vehicleName:data.vehicleName ,
-            vehicleTiming:data.vehicleTiming.toString() ,
+            vehicleTiming:data.vehicleTiming ,
             vehicleFromTo:data.vehicleFromTo,
             vehicleImageURL:data.vehicleImageURL,
             price:data.price,
@@ -49,11 +49,11 @@ function Addvehicle() {
           axios.post('https://8080-ebadadfaceebbeceffbfcffabcbabdadaaeecfcabcb.examlyiopb.examly.io/admin/addvehicle',data1).then(
             (response)=>{
               console.log(response);
-              alert("Successfully added!");
+              alert("Signup Success!");
             
             },(error)=>{
               console.log(error);
-              alert("Failed!");
+              alert("Signup failed!");
               console.log("error");
             }
           )
@@ -61,13 +61,13 @@ function Addvehicle() {
           onSubmitProps.resetForm()
         }
     useEffect(() => {
-        document.title = "TravelYaari  ||  AddVehicle";
+        document.title = "TravelYaari  ||  EditVehicle";
       },[]);
     return <div><AdminDashboard/>
         <Card>
             <Card.Body id="cardbody">
                 <Card id="addcard">
-                <Card.Title style={{textAlign:'center'}}><h2>Add</h2></Card.Title>
+                <Card.Title style={{textAlign:'center'}}><h2>Edit</h2></Card.Title>
                 <Formik initialValues={initialValues}
                     validationSchema={validationSchema}
                     onSubmit={onSubmit}>
@@ -86,39 +86,10 @@ function Addvehicle() {
                             </ErrorMessage>
                         </div>
 
-                       
-
-                        <label htmlFor='vehicleFromTo'>From</label>
-                        <div className="col-sm-6">
-                            <Field
-                                type='text'
-                                id='vehicleFromTo'
-                                name='vehicleFromTo'
-                                placeholder='Enter the from '
-                                className='form-control' />
-                            <ErrorMessage name='vehicleFromTo' >
-                                {msg => <div className='error'>{msg}</div>}
-                            </ErrorMessage>
-                        </div>
-
-                        <label htmlFor='vehicleFromTo'>To</label>
-                        <div className="col-sm-6">
-                            <Field
-                                type='text'
-                                id='vehicleFromTo'
-                                name='vehicleFromTo'
-                                placeholder='Enter to'
-                                className='form-control' />
-                            <ErrorMessage name='vehicleFromTo' >
-                                {msg => <div className='error'>{msg}</div>}
-                            </ErrorMessage>
-                        </div>
-
                         <label htmlFor='vehicleTiming'>Available Time</label>
                         <div className="col-sm-6">
                             <Field
-                                type='time'
-                               
+                                type='text'
                                 id='vehicleTiming'
                                 name='vehicleTiming'
                                 placeholder='Enter the Available Timing'
@@ -128,7 +99,20 @@ function Addvehicle() {
                             </ErrorMessage>
                         </div>
 
-                        <label htmlFor='vehicleImageURL'>Select the Image</label>
+                        <label htmlFor='vehicleFromTo'>From-To</label>
+                        <div className="col-sm-6">
+                            <Field
+                                type='text'
+                                id='vehicleFromTo'
+                                name='vehicleFromTo'
+                                placeholder='Enter the from and to'
+                                className='form-control' />
+                            <ErrorMessage name='vehicleFromTo' >
+                                {msg => <div className='error'>{msg}</div>}
+                            </ErrorMessage>
+                        </div>
+
+                        <label htmlFor='vehicleImageURL'>ImageUrl</label>
                         <div className="col-sm-6">
                             <Field
                                 type='text'
@@ -180,7 +164,7 @@ function Addvehicle() {
                                 {msg => <div className='error'>{msg}</div>}
                             </ErrorMessage>
                         </div>
-                        <button type='submit' className='btn btn-primary' id='addButton' >Add</button>
+                        <button type='submit' className='btn btn-primary' id='addButton' >Edit</button>
                        
 
                     </Form>
@@ -193,4 +177,4 @@ function Addvehicle() {
 
 }
 
-export default Addvehicle;
+export default EditVehicle;

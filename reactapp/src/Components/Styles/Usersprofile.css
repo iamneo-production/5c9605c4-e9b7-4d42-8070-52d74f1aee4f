@@ -1,0 +1,25 @@
+#usersbody::before{
+  content: "";
+    background: url(https://wallpaperaccess.com/full/212575.jpg);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    height: 800px;
+    position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.6;
+  
+  }
+  #usersbody{
+    position: relative; 
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #h1{
+    position: relative;
+   }

@@ -8,7 +8,8 @@
 
 #cardbody{
   background: url(https://wallpaperaccess.com/full/212575.jpg);
-  
+  background-size: 100% 100%;
+  background-attachment: fixed;
 }
 
 .card{
@@ -23,6 +24,7 @@
   margin-right: 20%;
   padding-bottom: 2rem;
 }
+
 #addButton{
     width:25%;
     margin-left:15%;

@@ -1,0 +1,19 @@
+#vehiclebody{
+    background: url(https://wallpaperaccess.com/full/212575.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    height: 800px;
+    opacity:0.8;
+  }
+  #user_card{
+    border-radius: 5%;
+   
+  }
+  #bus_body{
+    height: max-content;
+  }
+  .App {
+    display: flex;
+    justify-content: center;
+  }

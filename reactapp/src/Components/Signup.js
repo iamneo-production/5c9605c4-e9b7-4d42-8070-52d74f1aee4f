@@ -10,13 +10,15 @@ import {
 } from 'formik'
 import * as Yup from 'yup'
 import './Styles/Signup.css'
+import {  toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 function Signup() {
 
 //  const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-])|(\\([0-9]{2,3}\\)[ \\-])|([0-9]{2,4})[ \\-])?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
 
   const initialValues = {
-    useroradmin: '',
+   
     username: '',
     email: '',
     password: '',
@@ -25,7 +27,7 @@ function Signup() {
   }
 
   const validationSchema = Yup.object({
-    useroradmin: Yup.number().nullable().required("Required"),
+    //useroradmin: Yup.number().nullable().required("Required"),
     username: Yup.string().required('*Required'),
     email: Yup.string()
       .email(' *Invalid email format')
@@ -45,16 +47,18 @@ function Signup() {
 
 
   })
+ 
+  
   /*const onSubmit = async(data,onSubmitProps) => {
      
       try{
         const data1={
-      useroradmin:data.useroradmin ,
      username:data.username ,
      email: data.email,
      password: data.password,
      mobileNumber: data.mobileNumber
  }
+ console.log(data1);
       const res = await axios({
           method:'POST',
           url:'https://8080-ebadadfaceebbeceffbfcffabcbabdadaaeecfcabcb.examlyiopb.examly.io/user/signup',
@@ -63,41 +67,38 @@ function Signup() {
       console.log(res);
       alert("Signup successful !")
   }catch(err){
-      alert("signup failed !!")
+    alert('hi')
   }
-  
-    onSubmitProps.setSubmitting(false)
-    onSubmitProps.resetForm()
+  onSubmitProps.setSubmitting(false)
+  onSubmitProps.resetForm()
   }*/
-  const onSubmit=(data,onSubmitProps) => {
-    
+  const onSubmit = async(data,onSubmitProps) => {
     const data1={
-      useroradmin:data.useroradmin ,
-     username:data.username ,
-     email: data.email,
-     password: data.password,
-     mobileNumber: data.mobileNumber
- }
- console.log(data1);
-    axios.post('https://8080-ebadadfaceebbeceffbfcffabcbabdadaaeecfcabcb.examlyiopb.examly.io/user/signup',data1).then(
-      (response)=>{
-        console.log(response);
-        alert("Signup Success!");
-      
-      },(error)=>{
-        console.log(error);
-        alert("Signup failed!");
-        console.log("error");
-      }
-    )
-     onSubmitProps.setSubmitting(false)
-    onSubmitProps.resetForm()
-  }
+      username:data.username ,
+      email: data.email,
+      password: data.password,
+      mobileNumber: data.mobileNumber
+   }
+  
+      axios.post('https://8080-decaafdbcaceffbfcffabcbabdadaaeecfcabcb.examlyiopb.examly.io/user/signup',data1).then(
+        (response)=>{
+          toast('Success');
+          console.log(response);
+         },(error)=>{
+          console.log(error);
+          alert("Failed!");
+          console.log("error");
+        }
+      )
+       
+      onSubmitProps.setSubmitting(false)
+      onSubmitProps.resetForm()
+    }
   useEffect(() => {
     document.title = "TravelYaari  ||  Registration";
   },[]);
   const history = useHistory()
-  return <div className='card text-center ' style={{ marginLeft: '5rem', marginRight: '5REM' }}  >
+  return <div id="regbody"><div className='card text-center ' id="regcard" style={{ marginLeft: '5rem', marginRight: '5REM' , opacity: '0.9'}}  >
 
     <div className="card-header" style={{ backgroundColor: '#204E83', color: 'white' }}>
       <h2>Register</h2>
@@ -109,19 +110,19 @@ function Signup() {
         validationSchema={validationSchema}
         onSubmit={onSubmit}>
         <Form>
-
-          <label htmlFor='useroradmin'>Type</label>
+        <label htmlFor='username'>User Name</label>
           <div className="col-sm-4">
-            <Field name="useroradmin" as="select" className="form-select">
-              <option value={null}></option>
-              <option value={0}>Admin</option>
-              <option value={1}>User</option>
-            </Field>
-            <ErrorMessage name='useroradmin' >
+            <Field
+              type='text'
+              id='username'
+              name='username'
+              placeholder='Enter username'
+              className='form-control' />
+              <ErrorMessage name='username'  >
               {msg => <div className='error'>{msg}</div>}
             </ErrorMessage>
           </div>
-
+          
           <label htmlFor='email'>Email</label>
           <div className="col-sm-4">
             <Field
@@ -135,19 +136,7 @@ function Signup() {
             </ErrorMessage>
           </div>
 
-          <label htmlFor='username'>User Name</label>
-          <div className="col-sm-4">
-            <Field
-              type='text'
-              id='username'
-              name='username'
-              placeholder='Enter username'
-              className='form-control' />
-
-            <ErrorMessage name='username'  >
-              {msg => <div className='error'>{msg}</div>}
-            </ErrorMessage>
-          </div>
+          
 
           <label htmlFor='mobileNumber'>Mobile Number</label>
           <div className="col-sm-4">
@@ -196,9 +185,10 @@ function Signup() {
       <div>
         <p style={{ marginTop: '2rem' }}>
           Already a user?
-          <button type="button" id='siginLink' className="btn btn-link" onClick={() => { history.push("/login") }}>Login</button>
+          <button type="button" id='siginLink' className="btn btn-link" onClick={() => { history.push("/user/login") }}>Login</button>
         </p>
       </div>
+    </div>
     </div>
   </div>;
 

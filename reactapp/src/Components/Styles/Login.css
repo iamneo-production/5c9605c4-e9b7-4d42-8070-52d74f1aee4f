@@ -8,21 +8,15 @@
     margin-bottom: 5px;
     margin-top: 15px;
   }
-  #regbody{
+  #loginbody{
     background-image: url(/home/coder/project/workspace/reactapp/src/TravelYaari.jpeg);
-    background-repeat: no-repeat;
+    
     background-size: cover;
     width: 100%;
     padding-top: 2%;
-    padding-bottom: 2%;
+    padding-bottom: 19%;
   }
   
-  .card-body:hover{
-   opacity: 1;
-  }
-  #regcard{
-    border-radius: 10%;
-  }
   
   input + label {
     font-weight: bold;
@@ -30,8 +24,8 @@
     margin-top: 20px;
   }
    
-  form{
-   margin-left: 40%;
+  .form{
+   margin-left: 20%;
   }
   
   
