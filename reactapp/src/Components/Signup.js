@@ -2,6 +2,8 @@ import React,{useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import { useHistory } from 'react-router-dom'
+import {ToastContainer,toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 import {
   Formik,
   Form,
@@ -10,11 +12,8 @@ import {
 } from 'formik'
 import * as Yup from 'yup'
 import './Styles/Signup.css'
-import {  toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
 function Signup() {
 
-//  const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-])|(\\([0-9]{2,3}\\)[ \\-])|([0-9]{2,4})[ \\-])?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
 
   const initialValues = {
@@ -49,29 +48,7 @@ function Signup() {
   })
  
   
-  /*const onSubmit = async(data,onSubmitProps) => {
-     
-      try{
-        const data1={
-     username:data.username ,
-     email: data.email,
-     password: data.password,
-     mobileNumber: data.mobileNumber
- }
- console.log(data1);
-      const res = await axios({
-          method:'POST',
-          url:'https://8080-ebadadfaceebbeceffbfcffabcbabdadaaeecfcabcb.examlyiopb.examly.io/user/signup',
-          data: data1
-      });
-      console.log(res);
-      alert("Signup successful !")
-  }catch(err){
-    alert('hi')
-  }
-  onSubmitProps.setSubmitting(false)
-  onSubmitProps.resetForm()
-  }*/
+  
   const onSubmit = async(data,onSubmitProps) => {
     const data1={
       username:data.username ,
@@ -82,11 +59,26 @@ function Signup() {
   
       axios.post('https://8080-decaafdbcaceffbfcffabcbabdadaaeecfcabcb.examlyiopb.examly.io/user/signup',data1).then(
         (response)=>{
-          toast('Success');
+          toast.success('👍 Registered sucessfully',{ position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
           console.log(response);
          },(error)=>{
           console.log(error);
-          alert("Failed!");
+          toast.error("👎 Oops Failed!,Try again", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
           console.log("error");
         }
       )
@@ -100,11 +92,11 @@ function Signup() {
   const history = useHistory()
   return <div id="regbody"><div className='card text-center ' id="regcard" style={{ marginLeft: '5rem', marginRight: '5REM' , opacity: '0.9'}}  >
 
-    <div className="card-header" style={{ backgroundColor: '#204E83', color: 'white' }}>
+    <div className="card-header" style={{ backgroundColor:'black',color:'grey'}}>
       <h2>Register</h2>
     </div>
 
-    <div className="card-body  " style={{ backgroundColor: 'gainsboro' }}>
+    <div className="card-body  " style={{ backgroundColor:'#202020',color:'grey' }}>
 
       <Formik initialValues={initialValues}
         validationSchema={validationSchema}
@@ -179,7 +171,7 @@ function Signup() {
           </div>
 
           <button type='submit' className='btn btn-primary' id='submitButton' style={{ marginRight: '60%', marginTop: '15px' }}>Submit</button>
-
+          <ToastContainer/>
         </Form>
       </Formik>
       <div>

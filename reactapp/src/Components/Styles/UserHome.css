@@ -1,12 +1,24 @@
 #search{
     margin-top:5% ;
 }
+
 #user_card{
-    width: 250px;
-   height: max-content                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ;
+    width: 80%;
+    height:  min-content;
+    margin-top: 10%;
+   
 }
-#bus_body{
-    height:200px;
+#user_card:hover{
+    transform: scale(1,1);
+}
+
+
+#userhome{
+    background-image: url(https://wallpapercave.com/wp/wp2150816.jpg);
+    background-size: cover;
+  background-attachment: fixed;
+  
+  height: 1000px;
 }
 
 #deleteBus{
@@ -16,3 +28,4 @@
 #bus_img{
     height: 50%;
 }
+

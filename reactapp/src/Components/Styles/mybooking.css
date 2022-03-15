@@ -1,0 +1,13 @@
+#bookingtable{
+    width: 50%;
+    margin-top: 5%;
+    margin-left: 25%;
+}
+#bgimg{
+    background-image: url(https://wallpapercave.com/wp/wp2150816.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 1000px;
+    width :100%;
+}

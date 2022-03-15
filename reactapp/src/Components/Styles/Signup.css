@@ -9,19 +9,19 @@
     margin-top: 15px;
   }
   #regbody{
-    background-image: url(/home/coder/project/workspace/reactapp/src/TravelYaari.jpeg);
+    background-image: url("https://wallpaperaccess.com/full/3540115.jpg");
     background-repeat: no-repeat;
+    height: 120vh;
+    background-attachment: fixed;
+    background-position: center;
     background-size: cover;
-    width: 100%;
     padding-top: 2%;
-    padding-bottom: 2%;
+    padding-bottom: 25%;
   }
   
-  .card-body:hover{
-   opacity: 1;
-  }
+  
   #regcard{
-    border-radius: 10%;
+  border-radius: 25%;
   }
   
   input + label {

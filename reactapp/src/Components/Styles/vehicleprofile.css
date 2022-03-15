@@ -1,19 +1,24 @@
 #vehiclebody{
-    background: url(https://wallpaperaccess.com/full/212575.jpg);
+    background: url(https://wallpapercave.com/wp/wp2150816.jpg);
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
     background-attachment: fixed;
-    height: 800px;
-    opacity:0.8;
+    background-color: rgba(0,0,0,.5);
+   height: 1000px;
+   width :100%;
   }
+  
   #user_card{
-    border-radius: 5%;
-   
+    height: min-content;
+    width: 80%;
+
   }
-  #bus_body{
-    height: max-content;
-  }
+  
+  
   .App {
     display: flex;
     justify-content: center;
   }
+  
+
+  

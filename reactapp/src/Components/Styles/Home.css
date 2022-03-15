@@ -1,53 +1,108 @@
-.card h1{
-    margin-top: 10%;
-    font-size: 40px;
-    text-align: center;
-    color: rgb(252, 215, 7);
-    font-family: 'Courier New', Courier, monospace;
-   
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+.img {
+  background-image: url("https://wallpaperaccess.com/full/3540115.jpg");
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+}
+body{
+  font-family: "Solway";
+}
+
+
+.line-1 {
+  position: relative;
+  margin: 0 auto;
+  font-size: 300%;
+  text-align: justify;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(50%);
+  
+  color: black;
+  font-family: "Solway";
+}
+.mainBtn {
+  position: relative;
+  left: 74%;
+  margin-top: 10%;
+  display: inline-block;
+  width: 277px;
+  height: 50px;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: transparent;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 17px;
+  letter-spacing: 0.045em;
+  z-index: 1000;
+}
+
+.mainBtn svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.mainBtn svg rect {
+  /* stroke: #EC0033; */
+  stroke-width: 10;
+  stroke-dasharray: 353, 0;
+  stroke-dashoffset: 0;
+  -webkit-transition: all 600ms ease;
+  transition: all 600ms ease;
+}
+
+.mainBtn span {
+  background: rgb(12, 12, 12);
+  background: -moz-linear-gradient(
+    left,
+    rgb(192, 14, 14) 0%,
+    rgb(192, 14, 14) 0%
+  );
+  background: -webkit-linear-gradient(
+    left,
+    rgb(0, 0, 0) 0%,
+    rgb(255, 0, 0) 100%
+  );
+  background: linear-gradient(to right, rgb(15, 15, 15) 0%, rgb(10, 10, 10) 0);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8282', endColorstr='#e178ed', GradientType=1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mainBtn:hover svg rect {
+  stroke-width: 4;
+  stroke-dasharray: 196, 543;
+  stroke-dashoffset: 437;
+}
+
+/* Animation */
+.anim-typewriter {
+  animation: typewriter 5s steps(20) 1s 1 normal both,
+    blinkTextCursor 500ms steps(20) infinite normal;
+}
+@keyframes typewriter {
+  from {
+    width: 0;
   }
-  
-  .card h3{
-    font-size: 20px;
-    text-align: center;
-    color: rgb(231, 40, 40);
-    font-family: 'Courier New', Courier, monospace;
-    font-style: italic;
-    align-content: center;
+  to {
+    width: 24em;
   }
-  
-  
-  #homecard
-  {
-    background-image: url(/home/coder/project/workspace/reactapp/src/TravelYaari.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    opacity: 0.8;
-    position: absolute;
-    height: 100%;
-    background-attachment: fixed;
-    margin-bottom: 25%;
-    margin-right: 15%;
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(15, 13, 13, 0.75);
   }
-  
- #getstarted{
-    width: 30%;
-    max-width: 180px;
-    height : 45px;
-    margin-left:45%;
-    font-size: 18px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color : white;
-    background-color: rgb(235, 12, 49);
-    box-shadow:1px 1px #000 ;
-    border-radius: 25px;
-    
+  to {
+    border-right-color: transparent;
   }
-  
-#getstarted
-  {
-    width:50%;  
-  }
-  
-  
+}

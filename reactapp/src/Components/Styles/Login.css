@@ -9,19 +9,19 @@
     margin-top: 15px;
   }
   #loginbody{
-    background-image: url(/home/coder/project/workspace/reactapp/src/TravelYaari.jpeg);
-    
-    background-size: cover;
-    width: 100%;
-    padding-top: 2%;
-    padding-bottom: 19%;
+    background-image: url("https://wallpaperaccess.com/full/3540115.jpg");
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  padding-top: 10%;
   }
   
   
   input + label {
     font-weight: bold;
     margin-right: 20px;
-    margin-top: 20px;
+
   }
    
   .form{
