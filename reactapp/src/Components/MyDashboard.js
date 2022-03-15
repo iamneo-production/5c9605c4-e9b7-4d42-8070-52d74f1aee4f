@@ -14,7 +14,6 @@ import {
 import * as Yup from 'yup'
 import './Styles/mydashboard.css'
 import Validation from "./Validation.js";
-import { BiWindows } from 'react-icons/bi';
 function MyDashboard() {
     const yesterday = new Date(Date.now() - 86400000);
     const [busid, setBusid] = React.useState(localStorage.getItem("busiduser"));
@@ -47,7 +46,7 @@ function MyDashboard() {
             date: data.fillFromDate,
             from: busdetails.vehicleFrom,
             to: busdetails.vehicleTo,
-          array:data.name
+          
         }
         console.log(data1);
         axios.post('https://8080-decaafdbcaceffbfcffabcbabdadaaeecfcabcb.examlyiopb.examly.io/user/addBooking', data1,name).then((response) => {
