@@ -1,0 +1,48 @@
+.navbar{
+    background-color: #131212;
+}
+.App {
+    display: flex;
+    justify-content: center;
+  }
+  body{
+    font-family: "solway";
+  }
+
+#cardbody{
+  background: url(https://wallpapercave.com/wp/wp2150816.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  
+  height: 1200px;
+}
+
+
+#addcard{
+  background-color: rgba(224, 226, 204, 0.719);
+  margin-bottom: 5%;
+  margin-top: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding-bottom: 2rem;
+}
+
+#addButton{
+    width:25%;
+    margin-left:15%;
+    margin-top: 5%;
+  
+}
+
+.container{
+    padding-left: 20%;
+   
+}
+.nav-link:hover{
+    font-size: large;
+}
+
+.error {
+    color: red;
+    text-align: left;
+  }

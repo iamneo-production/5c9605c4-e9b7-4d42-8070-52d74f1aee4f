@@ -1,0 +1,31 @@
+#search{
+    margin-top:5% ;
+}
+
+#user_card{
+    width: 80%;
+    height:  min-content;
+    margin-top: 10%;
+   
+}
+#user_card:hover{
+    transform: scale(1,1);
+}
+
+
+#userhome{
+    background-image: url(https://wallpapercave.com/wp/wp2150816.jpg);
+    background-size: cover;
+  background-attachment: fixed;
+  
+  height: 1000px;
+}
+
+#deleteBus{
+    float:right ;
+}
+
+#bus_img{
+    height: 50%;
+}
+

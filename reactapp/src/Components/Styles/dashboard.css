@@ -1,0 +1,20 @@
+.navbar{
+  background-color: #1f1e1e;
+  opacity: 0.8;
+  position: relative; 
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.container{
+  padding-left: 20%;
+ 
+}
+.nav-link:hover{
+  font-size: large;
+}
