@@ -1,0 +1,108 @@
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+.img {
+  background-image: url("https://wallpaperaccess.com/full/3540115.jpg");
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+}
+body{
+  font-family: "Solway";
+}
+
+
+.line-1 {
+  position: relative;
+  margin: 0 auto;
+  font-size: 300%;
+  text-align: justify;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(50%);
+  
+  color: black;
+  font-family: "Solway";
+}
+.mainBtn {
+  position: relative;
+  left: 74%;
+  margin-top: 10%;
+  display: inline-block;
+  width: 277px;
+  height: 50px;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: transparent;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 17px;
+  letter-spacing: 0.045em;
+  z-index: 1000;
+}
+
+.mainBtn svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.mainBtn svg rect {
+  /* stroke: #EC0033; */
+  stroke-width: 10;
+  stroke-dasharray: 353, 0;
+  stroke-dashoffset: 0;
+  -webkit-transition: all 600ms ease;
+  transition: all 600ms ease;
+}
+
+.mainBtn span {
+  background: rgb(12, 12, 12);
+  background: -moz-linear-gradient(
+    left,
+    rgb(192, 14, 14) 0%,
+    rgb(192, 14, 14) 0%
+  );
+  background: -webkit-linear-gradient(
+    left,
+    rgb(0, 0, 0) 0%,
+    rgb(255, 0, 0) 100%
+  );
+  background: linear-gradient(to right, rgb(15, 15, 15) 0%, rgb(10, 10, 10) 0);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8282', endColorstr='#e178ed', GradientType=1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mainBtn:hover svg rect {
+  stroke-width: 4;
+  stroke-dasharray: 196, 543;
+  stroke-dashoffset: 437;
+}
+
+/* Animation */
+.anim-typewriter {
+  animation: typewriter 5s steps(20) 1s 1 normal both,
+    blinkTextCursor 500ms steps(20) infinite normal;
+}
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 24em;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(15, 13, 13, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
