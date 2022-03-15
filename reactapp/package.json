@@ -44,27 +44,14 @@
   },
   "browserslist": {
     "production": [
-<<<<<<< HEAD
-      ">0.3%",
-      "not ie 11",
-=======
       ">0.2%",
->>>>>>> 0495fddbebfd5022ba5690f155b5e99578e9b481
       "not dead",
       "not op_mini all"
     ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
-<<<<<<< HEAD
-      "last 1 safari version",
-      ">0.3%",
-      "not ie 11",
-      "not dead",
-      "not op_mini all"
-=======
       "last 1 safari version"
->>>>>>> 0495fddbebfd5022ba5690f155b5e99578e9b481
     ]
   }
 }
