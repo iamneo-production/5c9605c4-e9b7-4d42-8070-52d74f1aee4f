@@ -4,7 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0495fddbebfd5022ba5690f155b5e99578e9b481
 ReactDOM.render(
   <React.StrictMode>
     <App />
