@@ -1,0 +1,38 @@
+.App {
+    display: flex;
+}
+  
+  label {
+    font-weight: bold;
+    display: flex;
+    margin-bottom: 5px;
+    margin-top: 15px;
+  }
+  #regbody{
+    background-image: url(/home/coder/project/workspace/reactapp/src/TravelYaari.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+  
+  .card-body:hover{
+   opacity: 1;
+  }
+  
+  input + label {
+    font-weight: bold;
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+   
+  form{
+   margin-left: 40%;
+  }
+  
+  
+  .error {
+    color: red;
+    text-align: left;
+  }
