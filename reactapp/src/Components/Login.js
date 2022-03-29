@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
-import {ToastContainer,toast} from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify'
+import axios from "axios";
 import {
   Formik,
   Form,
@@ -9,30 +9,60 @@ import {
   ErrorMessage
 } from 'formik'
 import * as Yup from 'yup'
+
 import './Styles/Login.css'
+import { Card } from 'react-bootstrap';
+import 'react-toastify/dist/ReactToastify.css';
 function Login() {
-
-  const initialValues = {
-    
-    email: '',
+  const[userusername,setUsername]=useState("");
+  const[userpassword,setPassword]=useState("");
+  const [initialValues, setInitalValues] = useState({
+    username: '',
     password: ''
-  }
+  });
 
+  useEffect(() => {
+    document.title = "TravelYaari  || Login";
+  },[]);
   const validationSchema = Yup.object({
-   
+
     email: Yup.string()
       .email(' *Invalid email format')
       .required('*Required'),
     password: Yup.string().required('*Required'),
- })
-  const onSubmit = values => {
-    console.log(values)
-    if(values.email==="admin@gmail.com" && values.password==="Admin@123"){
-      history.push('/admin/addvehicle')
+  })
+  const onSubmit = () => {
+    const usercred = {
+      username: userusername,
+      password:userpassword
     }
-    else if(values.email!=="admin@gmail.com" && values.password!=="Admin@123")
-   history.push('/user/home')
-    toast.error('Invalid credentials', {
+    console.log(usercred)
+    axios.post(`https://8080-ebadadfaceebbeceffbfcffabcbabdadaaeecfcabcb.examlyiopb.examly.io/authenticate`, usercred).
+      then((res) => {
+        toast.success('Login Success', {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
+          console.log(res)
+        localStorage.setItem("token", `Bearer ${res.data.jwttoken}`)
+        const username=res.data.username
+        const userId =res.data.u_id
+        localStorage.setItem("userid", userId);
+        localStorage.setItem("username", username);
+        setTimeout(() => {
+          if(usercred.username==="Admin" && usercred.password==="Admin@123" )
+          history.push("/admin/addvehicle")
+          else
+          history.push("/user/home")
+        }, 3000);
+      })
+      .catch((err) => {
+      toast.error('Invalid credentials', {
       position: "top-center",
       autoClose: 5000,
       hideProgressBar: true,
@@ -41,61 +71,72 @@ function Login() {
       draggable: true,
       progress: undefined,
       });
-     
+    })
+    
+
   }
-
   const history = useHistory()
-  return <div id="loginbody"><div className='card text-center ' style={{ marginLeft: '25rem', marginRight: '5REM' , opacity: '0.9',width:'50%'}}  >
-        <div className="card-header" style={{backgroundColor:'black',color:'grey'}}>
-        
-            <h2>Login</h2>
-        </div>
-
-        <div className="card-body"  style={{ paddingLeft: '5rem' , backgroundColor:'#202020',color:'grey'}} >
-            
-           <Formik initialValues={initialValues}
-        validationSchema={validationSchema}
-        onSubmit={onSubmit}>
-           <Form>
-               <label htmlFor='email'>Email</label>
-          <div className="col-sm-4">
+  return <div id="loginbody"><Card id="logincard" style={{ textAlign: 'center', marginLeft: '25rem', marginRight: '5REM', width: '45%', color: 'white' }}  >
+    <div className="card-header">
+      <h2>Login</h2>
+    </div>
+    <div className="card-body"  >
+      <Formik initialValues={initialValues}
+        validationSchema={validationSchema}>
+        <Form style={{ marginLeft: '2%' }}>
+          <label htmlFor='email'>Username</label>
+          <div className="col-md-12">
             <Field
               type='text'
-              id='email'
-              name='email'
-              placeholder='Enter email'
-              className='form-control' />
+              id='username'
+              name='username'
+              placeholder='Enter username'
+              className='form-control'
+              onInput={(e)=>{
+                setUsername(e.target.value)
+              }}
+           
+            />
             <ErrorMessage name='email' >
               {msg => <div className='error'>{msg}</div>}
             </ErrorMessage>
           </div>
-             
-            <label htmlFor='password'>Password</label>
-          <div className="col-sm-4">
+
+          <label htmlFor='password'>Password</label>
+          <div className="col-md-12">
             <Field
               type='password'
               id='password'
               name='password'
               placeholder='Password'
-              className='form-control' />
+              className='form-control'
+              onInput={(event) => {
+                setPassword(event.target.value)
+              }}
+             />
             <ErrorMessage name='password' >
               {msg => <div className='error'>{msg}</div>}
             </ErrorMessage>
           </div>
-          <button type='submit' className='btn btn-primary' id='submitButton'  style={{ marginRight: '35rem', marginTop: '15px' }}>Login</button>
-           </Form>
-          </Formik>
-       
-        <p style={{marginTop:'2rem'}}>
-          New User?
-          <button type="button" id='siginupLink' className="btn btn-link" onClick={() => { history.push("/register") }}>Signup</button>
-         
-        </p>
-        <ToastContainer />
+          <button type='submit' className='btn btn-primary' id='submitButton' onClick={() => {
+            onSubmit()
+          }} style={{ marginRight: '35rem', marginTop: '15px' }}>Login</button>
+        </Form>
+      </Formik>
+
+      <p style={{ marginTop: '2rem' }}>
+        New User?
+        <button type="button" id='siginupLink' className="btn btn-link" onClick={() => { history.push("/register") }}>Signup</button>
+
+      </p>
+      <ToastContainer />
     </div>
-    </div>
-  </div>;
-            
+  </Card>
+  </div>
+
+
+    ;
+
 }
 
 export default Login
