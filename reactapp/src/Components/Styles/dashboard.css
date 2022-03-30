@@ -1,7 +1,9 @@
 .navbar{
-  background-color: #1f1e1e;
-  opacity: 0.8;
+  
   position: relative; 
+  border-color: transparent;
+  background-color: transparent;
+
 }
 
 .App {
@@ -10,11 +12,12 @@
 }
 
 
-
 .container{
   padding-left: 20%;
  
 }
+
 .nav-link:hover{
-  font-size: large;
+  
+  border-bottom: 1px solid #FFF
 }

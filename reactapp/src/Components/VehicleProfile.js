@@ -3,11 +3,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import './Styles/vehicleprofile.css'
 import { BiPencil, BiTrash } from "react-icons/bi";
-import { Card, Row, Col, Modal, Form, Accordion,Button } from 'react-bootstrap';
+import { Card, Row, Col, Modal, Form, Accordion, Button } from 'react-bootstrap';
 import AdminDashboard from './AdminDashboard';
 
 //import * as Yup from 'yup'
-import { toast,ToastContainer } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function VehicleProfile() {
@@ -16,7 +16,11 @@ function VehicleProfile() {
   const handleClose = () => setShow(false);
   const handleShow = (id) => {
     setShow(true);
-    axios.get(`https://8080-decaafdbcaceffbfcffabcbabdadaaeecfcabcb.examlyiopb.examly.io/admin/getVehicleById/${id}`)
+    axios.get(`https://8080-ebadadfaceebbeceffbfcffabcbabdadaaeecfcabcb.examlyiopb.examly.io/admin/getVehicleById/${id}`,{
+      headers: {
+        Authorization: localStorage.getItem("token")
+      }
+    })
       .then((response) => {
         setBusdetails(response.data);
       })
@@ -50,25 +54,35 @@ function VehicleProfile() {
     setShow(false);
     console.log(id);
     console.log(busdetails);
-    axios.put(`https://8080-decaafdbcaceffbfcffabcbabdadaaeecfcabcb.examlyiopb.examly.io/admin/updateVehicleById/${id}`, busdetails).then((response) => {
+    axios.put(`https://8080-ebadadfaceebbeceffbfcffabcbabdadaaeecfcabcb.examlyiopb.examly.io/admin/updateVehicleById/${id}`, busdetails, {
+      headers: {
+        Authorization: localStorage.getItem("token")
+      }
+    }).then((response) => {
       console.log(response);
-      
+
       window.location.reload();
     })
   }
 
   const handleOnClickDelete = async (data) => {
     if (window.confirm('Are you sure you want to delete?')) {
-      axios.delete(`https://8080-decaafdbcaceffbfcffabcbabdadaaeecfcabcb.examlyiopb.examly.io/admin/deleteVehicleById/${data}`).then((response) => {
-        console.log(response);
-        window.location.reload();
+      axios.delete(`https://8080-ebadadfaceebbeceffbfcffabcbabdadaaeecfcabcb.examlyiopb.examly.io/admin/deleteVehicleById/${data}`, {
+        headers: {
+          Authorization: localStorage.getItem("token")
+        }
+      }
+      )
+        .then((response) => {
+          console.log(response);
+          window.location.reload();
 
-      })
-      toast.success('👍 Deleted Successfully',{
+        })
+      toast.success('👍 Deleted Successfully', {
         position: "top-center",
-        closeOnClick:true,
-        progress:undefined,
-        autoClose:5000,
+        closeOnClick: true,
+        progress: undefined,
+        autoClose: 5000,
         hideProgressBar: true,
         pauseOnHover: true,
         draggable: true
@@ -82,7 +96,11 @@ function VehicleProfile() {
   }, []);
   const [posts, setPosts] = useState([])
   useEffect(() => {
-    axios.get("https://8080-decaafdbcaceffbfcffabcbabdadaaeecfcabcb.examlyiopb.examly.io/admin/vehicles")
+    axios.get("https://8080-ebadadfaceebbeceffbfcffabcbabdadaaeecfcabcb.examlyiopb.examly.io/admin/vehicles", {
+      headers: {
+        Authorization: localStorage.getItem("token")
+      }
+    })
       .then(res => {
         console.log(res)
         setPosts(res.data)
@@ -94,58 +112,58 @@ function VehicleProfile() {
   return <div id="vehiclebody">
 
     <AdminDashboard />
-    
-      <Card.Body >
-     
-      <Row>      
-          {
-            posts?.map((post) => {
-              
-              return (
-              
-                <Col xs={12} md={4} lg={3} key={post.id}>
 
-                  <Card id="user_card" variant="dark">
-                    <Card.Img variant="top" id="bus_img" style={{width:'100%',height:'150px'}} src={post.vehicleImageURL} />
-                    <Accordion>
-                      
-                        <Accordion.Header>{post.vehicleName}</Accordion.Header>
-                        <Accordion.Body id='bus_body'>
-                        
-                          <Card.Text>Vehicle Name :{post.vehicleName}</Card.Text>
-                          <Card.Text>Vehicle Time :{post.vehicleTiming}</Card.Text>
-                          <Card.Text>From  :{post.vehicleFrom}</Card.Text>
-                          <Card.Text>To :{post.vehicleTo}</Card.Text>
-                          <Card.Text>Fare :{post.price}</Card.Text>
-                          <Card.Text style={{ color: 'red' }}>Description :{post.vehicleDescription}</Card.Text>
+    <Card.Body >
 
-                        </Accordion.Body>
-                      
-                    </Accordion>
-                    <Card.Footer>
-                      <Button id="editBus" className="btn btn-success
+      <Row>
+        {
+          posts?.map((post) => {
+
+            return (
+
+              <Col xs={12} md={4} lg={3} key={post.id}>
+
+                <Card id="user_card" variant="dark">
+                  <Card.Img variant="top" id="bus_img" style={{ width: '100%', height: '150px' }} src={post.vehicleImageURL} />
+                  <Accordion>
+
+                    <Accordion.Header>{post.vehicleName}</Accordion.Header>
+                    <Accordion.Body id='bus_body'>
+
+                      <Card.Text>Vehicle Name :{post.vehicleName}</Card.Text>
+                      <Card.Text>Vehicle Time :{post.vehicleTiming}</Card.Text>
+                      <Card.Text>From  :{post.vehicleFrom}</Card.Text>
+                      <Card.Text>To :{post.vehicleTo}</Card.Text>
+                      <Card.Text>Fare :{post.price}</Card.Text>
+                      <Card.Text style={{ color: 'red' }}>Description :{post.vehicleDescription}</Card.Text>
+
+                    </Accordion.Body>
+
+                  </Accordion>
+                  <Card.Footer>
+                    <Button id="editBus" className="btn btn-success
                       " onClick={() => { handleShow(post.id) }}><BiPencil /></Button>
-                      <Button id="deleteBus" className="btn btn-warning" onClick={() => handleOnClickDelete(post.id)} ><BiTrash /></Button>
-                      <ToastContainer/>
-                    </Card.Footer>
-                  </Card>
+                    <Button id="deleteBus" className="btn btn-warning" onClick={() => handleOnClickDelete(post.id)} ><BiTrash /></Button>
+                    <ToastContainer />
+                  </Card.Footer>
+                </Card>
 
-                </Col>
-                )
-               
-            })
-            
-          }
+              </Col>
+            )
 
-       </Row>
-       
-      </Card.Body>
-   
+          })
+
+        }
+
+      </Row>
+
+    </Card.Body>
+
     <Modal show={show} onHide={handleClose}>
       {/* <Formik initialValues={initialValues}
         vaonSubmit={onSubmitEditlidationSchema={validationSchema}
         onSubmit={onSubmitEdit}> */}
-      <Modal.Header  closeButton><div style={{marginLeft:'45%'}}><h3>Edit</h3></div></Modal.Header>
+      <Modal.Header closeButton><div style={{ marginLeft: '45%' }}><h3>Edit</h3></div></Modal.Header>
       <Form >
         <Modal.Body>
           <label htmlFor='vehicleName'>Vehicle Name</label>
@@ -153,7 +171,7 @@ function VehicleProfile() {
             <Form.Control id='vehicleName' name='vehicleName' placeholder='Enter the name' className='form-control' value={busdetails.vehicleName}
               onChange={(e) => {
                 handleChange(e, "vehicleName")
-              }} required/>
+              }} required />
             {/* <ErrorMessage name='vehicleName' >
               {msg => <div className='error'>{msg}</div>}
             </ErrorMessage> */}
@@ -242,16 +260,16 @@ function VehicleProfile() {
             </ErrorMessage> */}
           </div>
         </Modal.Body>
-       
+
       </Form>
       <Modal.Footer>
-          <Button type="submit" className='btn btn-warning' onClick={() => { handleClose() }} style={{float:'left'}} >Close</Button>
-          <Button type='submit' className='btn btn-primary' id='addButton' onClick={(e) => {
-            e.preventDefault();
-            onSubmitEdit(busdetails.id);
-          }} style={{margin:'5px'}}>Update</Button>
+        <Button type="submit" className='btn btn-warning' onClick={() => { handleClose() }} style={{ float: 'left' }} >Close</Button>
+        <Button type='submit' className='btn btn-primary' id='addButton' onClick={(e) => {
+          e.preventDefault();
+          onSubmitEdit(busdetails.id);
+        }} style={{ margin: '5px' }}>Update</Button>
 
-        </Modal.Footer>
+      </Modal.Footer>
       {/* </Formik> */}
     </Modal>
   </div>

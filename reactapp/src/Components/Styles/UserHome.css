@@ -6,15 +6,11 @@
     width: 80%;
     height:  min-content;
     margin-top: 10%;
-   
+    
 }
-#user_card:hover{
-    transform: scale(1,1);
-}
-
 
 #userhome{
-    background-image: url(https://wallpapercave.com/wp/wp2150816.jpg);
+    background: url(https://cdn.99images.com/photos/wallpapers/creative-graphics/turquoise%20android-iphone-desktop-hd-backgrounds-wallpapers-1080p-4k-gfa8m.jpg);    background-repeat: no-repeat;
     background-size: cover;
   background-attachment: fixed;
   
@@ -28,4 +24,24 @@
 #bus_img{
     height: 50%;
 }
+#bookbutton{
+    background: rgba(255,255,255,0.5);
+    color:darkgreen
+}
+#bookbutton:hover{
+    background: rgb(75, 160, 216,1);
+    color:white
+}
 
+#addRevbtn{
+    background: rgba(255,255,255,0.5);
+    color:darkgreen
+}
+#addRevbtn:hover{
+    background: rgb(75, 160, 216,1);
+    color:white
+}
+
+#vehicleReview{
+    margin-top: 5%;
+}

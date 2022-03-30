@@ -41,7 +41,7 @@ function Addvehicle() {
         capacity: Yup.number().typeError('*You must specify a number').required('*Required').max(50, '*Should be less than 50'),
         vehicleDescription: Yup.string().required('*Required'),
     })
-    const onSubmit = async (data, onSubmitProps,fields) => {
+    const onSubmit = async (data, onSubmitProps) => {
         const data1 = {
             vehicleName: data.vehicleName,
             vehicleTiming: data.vehicleTiming.toString(),
@@ -53,7 +53,40 @@ function Addvehicle() {
             vehicleDescription: data.vehicleDescription
         }
         console.log(data1);
-        axios.post('https://8080-decaafdbcaceffbfcffabcbabdadaaeecfcabcb.examlyiopb.examly.io/admin/addvehicle', data1).then(
+        // axios.post('https://8080-ebadadfaceebbeceffbfcffabcbabdadaaeecfcabcb.examlyiopb.examly.io/admin/addvehicle', data1).then(
+        //     (response) => {
+        //         console.log(response);
+        //         toast.success('👍 Added Successfully', {
+        //             position: "top-center",
+        //             closeOnClick: true,
+        //             progress: undefined,
+        //             autoClose: 5000,
+        //             hideProgressBar: true,
+        //             pauseOnHover: true,
+        //             draggable: true
+        //         })
+        //         history.push('/admin/vehicleprofile')
+
+        //     }, (error) => {
+        //         console.log(error);
+        //         toast.error('👎 Failed to add vehicle!!!', {
+        //             position: "top-center",
+        //             closeOnClick: true,
+        //             progress: undefined,
+        //             autoClose: 5000,
+        //             hideProgressBar: true,
+        //             pauseOnHover: true,
+        //             draggable: true
+        //         })
+        //         console.log("error");
+        //     }
+        // )
+
+        axios.post('https://8080-ebadadfaceebbeceffbfcffabcbabdadaaeecfcabcb.examlyiopb.examly.io/admin/addvehicle', data1,{
+            headers: {
+              Authorization: localStorage.getItem("token")
+            }
+          }).then(
             (response) => {
                 console.log(response);
                 toast.success('👍 Added Successfully', {
@@ -89,16 +122,17 @@ function Addvehicle() {
         document.title = "TravelYaari  ||  AddVehicle";
     }, []);
     return <div id="cardbody">
+        <image src="D:\frontend\src\Components\Styles\admin.jpg"/>
         <AdminDashboard />
-          
-                <Card id="addcard" style={{backgroundColor:'#202020',color:'white',opacity:'0.8'}}>
+                    <Card id='addcard' style={{  color: 'white' }}>
                     <Card.Title style={{ textAlign: 'center' }}><h2>Add</h2></Card.Title>
+                    <Card.Body >
                     <Formik initialValues={initialValues}
                         validationSchema={validationSchema}
                         onSubmit={onSubmit}>
-                        <Form>
+                        <Form id="form" >
 
-                            <label htmlFor='vehicleName'>Vehicle Name</label>
+                            <label htmlFor='vehicleName' >Vehicle Name</label>
                             <div className="col-sm-6">
                                 <Field
                                     type='text'
@@ -210,12 +244,9 @@ function Addvehicle() {
 
                         </Form>
                     </Formik>
-                </Card>
-            
-        </div>
-   
-
-
+                    </Card.Body>
+                    </Card>
+                </div>
 }
 
 export default Addvehicle;

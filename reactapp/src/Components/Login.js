@@ -76,7 +76,9 @@ function Login() {
 
   }
   const history = useHistory()
-  return <div id="loginbody"><Card id="logincard" style={{ textAlign: 'center', marginLeft: '25rem', marginRight: '5REM', width: '45%', color: 'white' }}  >
+  return <div id="loginbody">
+        <video src='/videos/video1.mp4' autoPlay  loop muted />
+        <Card id="logincard" style={{  width: '45%', color: 'white' }}  >
     <div className="card-header">
       <h2>Login</h2>
     </div>

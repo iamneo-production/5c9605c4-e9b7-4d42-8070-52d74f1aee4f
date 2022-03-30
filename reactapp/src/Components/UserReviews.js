@@ -4,6 +4,8 @@ import UserDashboard from "./UserDashboard";
 import { FaStar } from "react-icons/fa";
 import './Styles/UserReviews.css'
 import axios from "axios";
+import ReactStars from "react-rating-stars-component";
+
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 function UserReviews() {
@@ -93,8 +95,8 @@ function UserReviews() {
       }
     }).then((res) => {
       console.log(res.data)
-      setReview(res.data)
-    })
+       setReview(res.data)
+})
       .catch((err) =>
         console.log(err))
   }, []);
@@ -102,7 +104,7 @@ function UserReviews() {
   return <div id="reviewbody">
     <UserDashboard />
     <ToastContainer/>
-    <Table id="reviewtable">
+    <Table striped bordered hover id="reviewtable">
       <thead>
         <tr>
           <th>UserName</th>
@@ -113,13 +115,19 @@ function UserReviews() {
       <tbody>
         {
           review?.map((rev) => {
+            if(rev.vid==null){
             return (
               <tr key={rev.id}>
                 <td>{rev.username}</td>
                 <td>{rev.desc}</td>
-                <td>{rev.rating}</td>
+                <td><ReactStars
+                count={parseInt(rev.rating)}
+                size={30}
+                color="#ffd700"
+                /></td>
               </tr>
             )
+            }
           })
         }
 

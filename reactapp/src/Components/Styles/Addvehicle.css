@@ -1,6 +1,4 @@
-.navbar{
-    background-color: #131212;
-}
+
 .App {
     display: flex;
     justify-content: center;
@@ -10,29 +8,35 @@
   }
 
 #cardbody{
-  background: url(https://wallpapercave.com/wp/wp2150816.jpg);
+  background: url(https://images.pexels.com/photos/386025/pexels-photo-386025.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  /* background: url('D:\frontend\src\Components\Styles\admin.jpg'); */
   background-size: cover;
   background-attachment: fixed;
-  
   height: 1200px;
 }
 
 
 #addcard{
-  background-color: rgba(224, 226, 204, 0.719);
-  margin-bottom: 5%;
+  background:rgba(0,0,0,0.55);
   margin-top: 5%;
   margin-left: 20%;
   margin-right: 20%;
   padding-bottom: 2rem;
+  width: 50%;
 }
 
 #addButton{
     width:25%;
     margin-left:15%;
     margin-top: 5%;
-  
+    background: rgba(255,255,255,1);
+    color:limegreen;
 }
+#addButton:hover{
+  background: rgb(16, 170, 75);
+  color:black
+}
+
 
 .container{
     padding-left: 20%;
@@ -46,3 +50,10 @@
     color: red;
     text-align: left;
   }
+
+  form{
+    position: relative;
+    margin-left: 40%;
+    
+  }
+ 
