@@ -3,6 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/user-event": "^12.8.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.1.1"
+=======
     "@fontsource/solway": "^4.5.3",
     "@fortawesome/free-solid-svg-icons": "^6.0.0",
     "@fortawesome/react-fontawesome": "^0.1.17",
@@ -29,6 +38,7 @@
     "react-yup": "^1.23.0",
     "web-vitals": "^1.1.1",
     "yup": "^0.29.3"
+>>>>>>> 702ffb002da529a6f96c5288333cf66ffacc3d92
   },
   "scripts": {
     "start": "PORT=8081 react-scripts start",
