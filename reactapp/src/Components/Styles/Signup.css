@@ -1,0 +1,41 @@
+.App {
+    display: flex;
+}
+  
+  label {
+    font-weight: bold;
+    display: flex;
+    margin-bottom: 5px;
+    margin-top: 15px;
+  }
+  #regbody{
+    background-image: url("https://wallpaperaccess.com/full/3540115.jpg");
+    background-repeat: no-repeat;
+    height: 120vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    padding-top: 2%;
+    padding-bottom: 25%;
+  }
+  
+  
+  #regcard{
+  border-radius: 25%;
+  }
+  
+  input + label {
+    font-weight: bold;
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+   
+  form{
+   margin-left: 40%;
+  }
+  
+  
+  .error {
+    color: red;
+    text-align: left;
+  }
