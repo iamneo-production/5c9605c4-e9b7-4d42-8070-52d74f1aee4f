@@ -25,7 +25,7 @@ function App() {
       <ProtectedRoute path="/user/home" component={UserHome} />
       <ProtectedRoute path="/user/dashboard" component={MyDashboard} />
       <ProtectedRoute path="/user/booking" component={MyBooking} />
-      {/* <ProtectedRoute path="/user/review" component={UserReviews} /> */}
+      <ProtectedRoute path="/user/review" component={UserReviews} /> }
       <ProtectedRoute path="/admin/addvehicle" component={Addvehicle} />
       <ProtectedRoute path="/admin/vehicleprofile" component={VehicleProfile} />
       <ProtectedRoute path="/admin/userprofile" component={UsersProfile}/>
