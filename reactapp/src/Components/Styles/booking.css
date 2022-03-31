@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+   
+
+}
+
+body {
+    background-color: #dcf4ff
+}
+
+.wrapper {
+    max-width: 800px;
+    margin: 50px auto
+}
+
+.wrapper form {
+    padding: 30px 50px;
+    justify-content: center
+
+}
+
+.wrapper form .form-group {
+    padding-bottom: .5rem
+}
+
+
+
+.wrapper form a {
+    color: #333
+}
+
+.wrapper form .form-control {
+    outline: none;
+    border: none
+}
+
+.wrapper form .form-control:focus {
+    box-shadow: none
+}
+
+.wrapper form input[type="text"]:focus::placeholder {
+    color: transparent
+}
+
+input[type="date"] {
+    cursor: pointer
+}
+
+.wrapper form .label::after {
+    position: absolute;
+    top: 5px;
+    left: 0px;
+    font-size: 0.9rem;
+    margin: 0rem 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    font-weight: 600;
+    color: #999;
+    transition: all .2s ease-in-out;
+    transform: scale(0)
+}
+
+.wrapper form .label#busname::after {
+    content: 'Busname'
+}
+
+.wrapper form .label#address::after {
+    content: 'Address'
+}
+
+.wrapper form .label#from::after {
+    content: 'From Date'
+}
+
+.wrapper form .label#to::after {
+    content: 'To Date'
+}
+
+.wrapper form .label#fromplace::after {
+    content: 'From place'
+}
+.wrapper form .label#toplace::after {
+    content: 'To place'
+}
+.wrapper form .label#person::after {
+    content: 'Total passengers'
+}
+.wrapper form .label#user::after {
+    content: 'User name'
+}
+.wrapper form .label#price::after {
+    content: 'Total Price'
+}
+.wrapper form input[type="text"]:focus~.label::after {
+    top: -15px;
+    left: 0px;
+    transform: scale(1)
+}
+
+.wrapper form input[type="date"]:focus~.label::after {
+    top: -15px;
+    left: 0px;
+    transform: scale(1)
+}
+
+.margin {
+    margin: 2rem 0rem
+}
+#viewticket{
+    margin-left: 10%;
+}
