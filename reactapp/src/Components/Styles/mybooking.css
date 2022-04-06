@@ -1,0 +1,31 @@
+#bookingtable{
+    width: 50%;
+    margin-top: 5%;
+    margin-left: 25%;
+}
+#bgimg{
+    background: url(https://cdn.99images.com/photos/wallpapers/creative-graphics/turquoise%20android-iphone-desktop-hd-backgrounds-wallpapers-1080p-4k-gfa8m.jpg);    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 1000px;
+    width :100%;
+}
+
+#viewTicketbtn{
+    background: rgba(255,255,255,0.55);
+    color:goldenrod
+  }
+  #viewTicketbtn:hover{
+      background: rgba(16, 162, 230, 1);
+      color:white
+  }
+
+  #cancelTicketbtn{
+    background: rgba(255,255,255,0.55);
+    color:goldenrod
+  }
+  #cancelTicketbtn:hover{
+      background: rgba(16, 162, 230, 1);
+      color:white
+  }
