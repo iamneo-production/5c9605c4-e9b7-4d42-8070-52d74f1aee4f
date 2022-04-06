@@ -1,0 +1,40 @@
+#vehiclebody{
+    background: url(https://images.pexels.com/photos/386025/pexels-photo-386025.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: rgba(0,0,0,.5);
+    height: 1000px;
+    width :100%;
+  }
+  
+  #user_card{
+    height: min-content;
+    width: 80%;
+  }
+  
+  .App {
+    display: flex;
+    justify-content: center;
+  }
+
+  #editBus{
+    background: rgba(255, 255, 255, 0.5);
+    color:darkcyan
+  }
+  #editBus:hover{
+    background:rgb(3, 124, 238);
+    color: white;
+  }
+
+  #deleteBus{
+    background: rgba(255,255,255,.5);
+    color:darkcyan
+  }
+  #deleteBus:hover{
+    background:rgb(3, 124, 238);
+    color: white;
+  }
+  
+
+  

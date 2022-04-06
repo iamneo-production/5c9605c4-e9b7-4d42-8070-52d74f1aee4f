@@ -1,0 +1,37 @@
+#mybooking{
+    background: url(https://cdn.99images.com/photos/wallpapers/creative-graphics/turquoise%20android-iphone-desktop-hd-backgrounds-wallpapers-1080p-4k-gfa8m.jpg);    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: max-content;
+    width :100%;
+    padding-bottom: 5rem;
+    
+ 
+}
+
+#bookcard{
+    background:rgba(255,255,255,0.55);
+    margin-bottom: 5%;
+    margin-top: 5%;
+    margin-left: 20%;
+    margin-right: 15%;
+    padding-bottom: 2rem;
+    width:55%
+}
+#error{
+    text-align: left;
+    font-size: 15px !important;
+    font-family: 'Times New Roman', Times, serif;
+    color:red !important;
+  }
+
+  #addbookingbtn{
+    margin-top: 5%;
+    
+    background: rgba(255,255,255,0.55);
+    color:goldenrod
+  }
+  #addbookingbtn:hover{
+      background: rgba(16, 162, 230, 1);
+      color:white
+  }

@@ -1,0 +1,24 @@
+#reviewbody{
+background: url(https://cdn.99images.com/photos/wallpapers/creative-graphics/turquoise%20android-iphone-desktop-hd-backgrounds-wallpapers-1080p-4k-gfa8m.jpg);    background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: rgba(0,0,0,.5);
+  height: 1000px;
+  width :100%;
+}
+#reviewtable{
+    width: 70%;
+    position: relative;
+    margin-bottom: 20%;
+    margin-top: 5%;
+    justify-content: center;
+    margin-left: 10%;
+}
+thead{
+  background: rgba(255,255,255,.5);
+}
+tbody tr:hover{
+  background: rgba(255, 255, 253, 0.534);
+  color:white
+}
