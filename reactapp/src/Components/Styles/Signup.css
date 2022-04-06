@@ -1,0 +1,46 @@
+.App {
+    display: flex;
+}
+  
+  label {
+    font-weight: bold;
+    display: flex;
+    margin-bottom: 5px;
+    margin-top: 15px;
+  }
+  #regbody{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: inset 0 0 0 1000px rgb(0,0,0,0.2);
+    object-fit: contain;
+    justify-content: center;
+  }
+  
+  
+  #regcard{
+  border-radius: 5%;
+  background:rgba(0,0,0,0.7);
+  width: 50%;
+  
+  color: white;
+  padding-top: 2%;
+  }
+  
+  input + label {
+    font-weight: bold;
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+   
+  form{
+   margin-left: 40%;
+  }
+  
+  
+  .error {
+    color: red;
+    text-align: left;
+  }

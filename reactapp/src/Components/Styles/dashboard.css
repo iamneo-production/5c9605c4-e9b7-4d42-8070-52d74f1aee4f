@@ -1,0 +1,23 @@
+.navbar{
+  
+  position: relative; 
+  border-color: transparent;
+  background-color: transparent;
+
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+}
+
+
+.container{
+  padding-left: 20%;
+ 
+}
+
+.nav-link:hover{
+  
+  border-bottom: 1px solid #FFF
+}
