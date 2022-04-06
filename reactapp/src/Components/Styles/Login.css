@@ -1,0 +1,47 @@
+.App {
+  display: flex;
+}
+
+label {
+  font-weight: bold;
+  display: flex;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+#loginbody{
+  background-image: url("https://wallpaperaccess.com/full/3540115.jpg");
+background-repeat: no-repeat;
+height: 100vh;
+background-position: center;
+background-size: cover;
+padding-top: 10%;
+}
+
+
+input + label {
+  font-weight: bold;
+  /* margin-right: 20px; */
+  color: white;
+  
+}
+#logincard{
+  background: rgba(3, 16, 17, 0.7);
+
+}
+
+.error {
+  color: red;
+  text-align: left;
+}
+
+#submitButtton{
+  margin: 5%;
+  padding-bottom: 2%;
+}
+#submitButton{
+  background: rgba(0,0,0,0.5);
+}
+#submitButton:hover{
+  background: rgba(255,255,255,1);
+  color: black;
+}
