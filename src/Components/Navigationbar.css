@@ -1,0 +1,26 @@
+.color{
+    background-color: rgb(253, 148, 148);
+    color: blueviolet;
+    font-family: 'Solway';
+  
+  }
+  
+  .nav-links {
+    display: inline-block;
+    height: 20px;
+    background-color:green;
+    color: yellow; 
+    }
+    
+    .nav-links:hover {
+    background-color:green;  
+    color: yellow; 
+    }
+    .image
+  {
+      background-image: url("https://www.setra-bus.com/content/dam/sbo/markets/common/models/cc-hd-models/images/teaser/sbo-teaser-comfortclass-hd-overview-02.jpg") ;
+      background-repeat: no-repeat;
+      height: 100vh;
+      background-position: center;
+      background-size: cover;
+  }

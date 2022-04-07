@@ -1,0 +1,30 @@
+
+.App {
+    display: flex;
+    justify-content: center;
+  }
+  
+  label {
+    font-weight: bold;
+    display: flex;
+    margin-bottom: 5px;
+    margin-top: 15px;
+  }
+  p{
+    margin-right: 10rem;
+  }
+  input + label {
+    font-weight: bold;
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+  form{
+    margin-left: 20%;
+  }
+  .error {
+    color:red;
+    text-align: left;
+  }
+  .card-body{
+    background-image: linear-gradient(#fad16d,#adfe65);
+  }
